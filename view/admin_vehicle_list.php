@@ -49,6 +49,7 @@
                         </option>
                         <?php endforeach; ?>
             </select>
+            <br>
             <button class="add-button bold">Submit</button>
             </form>
             <form action="." method="get" id="list_header_select" class="list_header_select">
@@ -75,21 +76,21 @@
         <?php foreach ($vehicles as $vehicle) : ?>
             
             <tr>
-                <th><?=$vehicle['year'] ?></th>
-                <th><?=$vehicle['makeName'] ?></th>
-                <th><?=$vehicle['model'] ?></th>
-                <th><?=$vehicle['typeName'] ?></th>
-                <th><?=$vehicle['className'] ?></th>
-                <th>$<?=$vehicle['price'] ?></th>
-                <th>
+                <td><?=$vehicle['year'] ?></td>
+                <td><?=$vehicle['makeName'] ?></td>
+                <td><?=$vehicle['model'] ?></td>
+                <td><?=$vehicle['typeName'] ?></td>
+                <td><?=$vehicle['className'] ?></td>
+                <td>$<?=$vehicle['price'] ?></td>
+                <td>
                     <div class="list_remove_vehicle">
                         <form action="." method="post">
                             <input type="hidden" name="action" value="delete_vehicle">
-                            <input type="hidden" name="vehicleID" value="<?php $vehicle['vehicleID'] ?>">
+                            <input type="hidden" name="vehicle_id" value="<?php echo $vehicle['vehicleID']; ?>">
                             <button class="remove-button">Remove</button>
                         </form>
                 </div>
-            </th>
+            </td>
             </tr>
             <?php endforeach; ?>
         </table>

@@ -10,16 +10,16 @@
         <?php foreach ($classes as $class) : ?>
             
             <tr>
-                <th><?=$class['className'] ?></th>
-                <th>
+                <td><?=$class['className'] ?></td>
+                <td>
                     <div class="list_remove_class">
                         <form action="." method="post">
                             <input type="hidden" name="action" value="delete_class">
-                            <input type="hidden" name="classID" value="<?php $class['classID'] ?>">
+                            <input type="hidden" name="class_id" value="<?php echo $class['classID']; ?>">
                             <button class="remove-button">Remove</button>
                         </form>
                 </div>
-            </th>
+            </td>
             </tr>
             <?php endforeach; ?>
         </table>

@@ -51,14 +51,20 @@
             </select>
             </form>
 
+            <form action="." method="post">
             <label>Year:</label>
+            <input type="hidden" name="action" value="add_vehicle">
+            <input type="hidden" name="make_id" value="<?php echo $make_id; ?>">
             <input type="text" id="year" name="year" required>
+            <br>
             <label>Model:</label>
             <input type="text" id="model" name="model" required>
+            <br>
             <label>Price:</label>
             <input type="text" id="price" name="price" required>
-
+            <br>
             <button type="submit" name="add_vehicle" value="add_vehicle">Add Vehicle</button>
+            </form>
 </form>
 </section>
 

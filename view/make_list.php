@@ -10,16 +10,16 @@
         <?php foreach ($makes as $make) : ?>
             
             <tr>
-                <th><?=$make['makeName'] ?></th>
-                <th>
+                <td><?=$make['makeName'] ?></td>
+                <td>
                     <div class="list_remove_make">
                         <form action="." method="post">
                             <input type="hidden" name="action" value="delete_make">
-                            <input type="hidden" name="makeID" value="<?php $make['makeID'] ?>">
+                            <input type="hidden" name="make_id" value="<?php echo $make['makeID']; ?>">
                             <button class="remove-button">Remove</button>
                         </form>
                 </div>
-            </th>
+            </td>
             </tr>
             <?php endforeach; ?>
         </table>

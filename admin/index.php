@@ -88,11 +88,12 @@ switch($action){
         $makes = get_makes();
         $classes = get_classes();
         $types = get_types();
+
         include('../view/add_vehicle_form.php');
 
     case "add_vehicle":
         if($make_id && $class_id && $type_id && $year && $model && $price){
-            add_vehicle($make_id, $class_id, $type_id, $year, $model, $price);
+            add_vehicle($make_id, $type_id, $class_id, $year, $model, $price);
             header("Location .?make_id=$make_id");
         } else {
             $error = "Invalid vehicle data. Check all fields and try again.";

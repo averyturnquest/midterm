@@ -10,16 +10,16 @@
         <?php foreach ($types as $type) : ?>
             
             <tr>
-                <th><?=$type['typeName'] ?></th>
-                <th>
+                <td><?=$type['typeName'] ?></td>
+                <td>
                     <div class="list_remove_type">
                         <form action="." method="post">
                             <input type="hidden" name="action" value="delete_type">
-                            <input type="hidden" name="typeID" value="<?php $type['typeID'] ?>">
+                            <input type="hidden" name="type_id" value="<?php echo $type['typeID']; ?>">
                             <button class="remove-button">Remove</button>
                         </form>
                 </div>
-            </th>
+            </td>
             </tr>
             <?php endforeach; ?>
         </table>

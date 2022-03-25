@@ -74,12 +74,12 @@
         <?php foreach ($vehicles as $vehicle) : ?>
             
             <tr>
-                <th><?=$vehicle['year'] ?></th>
-                <th><?=$vehicle['makeName'] ?></th>
-                <th><?=$vehicle['model'] ?></th>
-                <th><?=$vehicle['typeName'] ?></th>
-                <th><?=$vehicle['className'] ?></th>
-                <th>$<?=$vehicle['price'] ?></th>
+                <td><?=$vehicle['year'] ?></td>
+                <td><?=$vehicle['makeName'] ?></td>
+                <td><?=$vehicle['model'] ?></td>
+                <td><?=$vehicle['typeName'] ?></td>
+                <td><?=$vehicle['className'] ?></td>
+                <td>$<?=$vehicle['price'] ?></td>
             </tr>
             <?php endforeach; ?>
         </table>
