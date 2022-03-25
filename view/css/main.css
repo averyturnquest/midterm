@@ -106,7 +106,7 @@ footer {
   position: sticky;
   top: 0;
   background: royalblue;
-  color: #fff;
+  color: #000;
   font-weight: bold;
   flex-grow: 1;
   display: flex;
@@ -196,7 +196,7 @@ table, th, td {
 .add-button {
   height: 100%;
   width: 100%;
-  color: #fff;
+  color: #000;
   font-size: 1rem;
   background: royalblue;
   border: 1px solid royalblue;
