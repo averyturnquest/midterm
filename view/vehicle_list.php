@@ -2,7 +2,6 @@
 
 <section id="list" class="list">
     <header class="list_row list_header">
-        <h1>Vehicle List</h1>
         <form action="." method="get" id="list_header_select" class="list_header_select">
             <input type="hidden" name="action" value="make">
             <select name="make_id" required>
