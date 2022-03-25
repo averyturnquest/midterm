@@ -16,6 +16,9 @@
                         </option>
                         <?php endforeach; ?>
             </select>
+            <button class="add-button bold">Submit</button>
+            </form>
+            <form action="." method="get" id="list_header_select" class="list_header_select">
             <input type="hidden" name="action" value="type">
             <select name="type_id" required>
                 <option value="0">View All Types</option>
@@ -29,6 +32,9 @@
                         </option>
                         <?php endforeach; ?>
             </select>
+            <button class="add-button bold">Submit</button>
+            </form>
+            <form action="." method="get" id="list_header_select" class="list_header_select">
             <input type="hidden" name="action" value="class">
             <select name="class_id" required>
                 <option value="0">View All Classes</option>
