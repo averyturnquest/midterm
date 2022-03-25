@@ -18,6 +18,7 @@
             </select>
             <button class="add-button bold">Submit</button>
             </form>
+            <br>
             <form action="." method="get" id="list_header_select" class="list_header_select">
             <input type="hidden" name="action" value="type">
             <select name="type_id" required>
@@ -34,6 +35,7 @@
             </select>
             <button class="add-button bold">Submit</button>
             </form>
+            <br>
             <form action="." method="get" id="list_header_select" class="list_header_select">
             <input type="hidden" name="action" value="class">
             <select name="class_id" required>
@@ -50,6 +52,7 @@
             </select>
             <button class="add-button bold">Submit</button>
             </form>
+            <br>
             <form action="." method="get" id="list_header_select" class="list_header_select">
                 <p>Sort by:</p>
                 <input type="radio" name="action" value="year">
