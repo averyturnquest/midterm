@@ -2,17 +2,17 @@
 function get_vehicles_by_make($make_id){
     global $db;
     if($make_id){
-        $query ='SELECT V.vehicleID, V.model, V.price, M.makeName, C.className, T.typeName FROM vehicles V
+        $query ='SELECT V.vehicleID, V.model, V.price, V.year, M.makeName, C.className, T.typeName FROM vehicles V
         LEFT JOIN make M ON V.makeID = M.makeID 
         LEFT JOIN class C on V.classID = C.classID
         LEFT JOIN type T on V.typeID = T.typeID
-        WHERE V.makeID = :make_id ORDER BY vehicleID';
+        WHERE V.makeID = :make_id ORDER BY `year`';
     } else{
-        $query ='SELECT V.vehicleID, V.model, V.price, M.makeName, C.className, T.typeName FROM vehicles V
+        $query ='SELECT V.vehicleID, V.model, V.price, V.year, M.makeName, C.className, T.typeName FROM vehicles V
         LEFT JOIN make M ON V.makeID = M.makeID 
         LEFT JOIN class C on V.classID = C.classID
         LEFT JOIN type T on V.typeID = T.typeID
-        ORDER BY M.makeID';
+        ORDER BY `year`';
     }
     $statement = $db->prepare($query);
     if($make_id){
@@ -26,21 +26,21 @@ function get_vehicles_by_make($make_id){
 
 function get_vehicles_by_type($type_id){
     global $db;
-    if($make_id){
-        $query ='SELECT V.vehicleID, V.model, V.price, M.makeName, C.className, T.typeName FROM vehicles V
+    if($type_id){
+        $query ='SELECT V.vehicleID, V.model, V.price, V.year, M.makeName, C.className, T.typeName FROM vehicles V
         LEFT JOIN make M ON V.makeID = M.makeID 
         LEFT JOIN class C on V.classID = C.classID
         LEFT JOIN type T on V.typeID = T.typeID
         WHERE V.typeID = :type_id ORDER BY vehicleID';
     } else{
-        $query ='SELECT V.vehicleID, V.model, V.price, M.makeName, C.className, T.typeName FROM vehicles V
+        $query ='SELECT V.vehicleID, V.model, V.price, V.year, M.makeName, C.className, T.typeName FROM vehicles V
         LEFT JOIN make M ON V.makeID = M.makeID 
         LEFT JOIN class C on V.classID = C.classID
         LEFT JOIN type T on V.typeID = T.typeID
         ORDER BY T.typeID';
     }
     $statement = $db->prepare($query);
-    if($make_id){
+    if($type_id){
         $statement->bindValue(':type_id', $type_id);
     }
     $statement->execute();
@@ -51,21 +51,21 @@ function get_vehicles_by_type($type_id){
 
 function get_vehicles_by_class($class_id){
     global $db;
-    if($make_id){
-        $query ='SELECT V.vehicleID, V.model, V.price, M.makeName, C.className, T.typeName FROM vehicles V
+    if($class_id){
+        $query ='SELECT V.vehicleID, V.model, V.price, V.year, M.makeName, C.className, T.typeName FROM vehicles V
         LEFT JOIN make M ON V.makeID = M.makeID 
         LEFT JOIN class C on V.classID = C.classID
         LEFT JOIN type T on V.typeID = T.typeID
         WHERE V.classID = :class_id ORDER BY vehicleID';
     } else{
-        $query ='SELECT V.vehicleID, V.model, V.price, M.makeName, C.className, T.typeName FROM vehicles V
+        $query ='SELECT V.vehicleID, V.model, V.price, V.year, M.makeName, C.className, T.typeName FROM vehicles V
         LEFT JOIN make M ON V.makeID = M.makeID 
         LEFT JOIN class C on V.classID = C.classID
         LEFT JOIN type T on V.typeID = T.typeID
         ORDER BY C.classID';
     }
     $statement = $db->prepare($query);
-    if($make_id){
+    if($class_id){
         $statement->bindValue(':class_id', $class_id);
     }
     $statement->execute();

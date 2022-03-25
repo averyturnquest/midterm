@@ -7,4 +7,7 @@
     <title>Zippy's Used Autos</title>
 </head>
 <body>
-    <main class="main">
+    <h1>Database Error</h1>
+    <p>Error message: <?php echo $error_message; ?></p>
+</body>
+</html>
