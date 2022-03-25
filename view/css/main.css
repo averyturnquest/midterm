@@ -86,6 +86,59 @@ footer {
   }
 }
 
+.list_row {
+  width: 100%;
+  max-width: 100%;
+  border-bottom: 1px solid #000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.list_row:last-child {
+  border: none;
+}
+
+.list_header {
+  width: 100%;
+  padding: 0.5em;
+  position: sticky;
+  top: 0;
+  background: royalblue;
+  color: #000;
+  font-weight: bold;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media only screen and (min-width: 768px) {
+  .list_header {
+    flex-direction: row;
+  }
+}
+
+.list_header h1 {
+  font-size: 1.5rem;
+}
+
+.list_header_select {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 1rem;
+}
+
+.list_header_select button {
+  background-color: limegreen;
+  margin-left: 0.25rem;
+}
+
+.list_item {
+  flex-grow: 1;
+  padding: 0.5em;
+}
+
 .list_removeItem {
   display: flex;
   justify-content: center;
