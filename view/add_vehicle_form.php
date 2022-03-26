@@ -3,8 +3,8 @@
 <section>
         <h2>Add Vehicle</h2>
         
-        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-            <input type="hidden" name="action" value="add_vehicle">
+        <form action="." method="post">
+            <input type="hidden" name="action" value="add_vehicle" id="add_form" class="add_form">
             <label>Make:</label>
             <select name="make_id" required>
                 <?php foreach($makes as $make) : ?>
@@ -46,15 +46,15 @@
             </select>
             <br>
             <label>Year:</label>
-            <input type="text" name="year" required>
+            <input type="text" name="year" required />
             <br>
             <label>Model:</label>
-            <input type="text" id="model" name="model" required>
+            <input type="text" id="model" name="model" required />
             <br>
             <label>Price:</label>
-            <input type="text" id="price" name="price" required>
+            <input type="text" id="price" name="price" required />
             <br>
-            <button type="submit" name="add_vehicle" value="add_vehicle">Add Vehicle</button>
+            <button class="add-button bold">Add Vehicle</button>
            
 </form>
 </section>

@@ -100,7 +100,7 @@ switch($action){
         include('../view/class_list.php');
         break;
 
-    case "add_vehicle_form":
+    case "vehicle_form":
         $makes = get_makes();
         $classes = get_classes();
         $types = get_types();
@@ -112,8 +112,8 @@ switch($action){
             add_vehicle($make_id, $class_id, $type_id, $year, $model, $price);
             header("Location .?make_id=$make_id");
         } else {
-            $error = "Invalid vehicle data. Check all fields and try again.";
-            include('../view/error.php');
+           // $error = "Invalid vehicle data. Check all fields and try again.";
+            //include('../view/error.php');
         }
         break;
 
