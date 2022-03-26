@@ -74,6 +74,56 @@ function get_vehicles_by_class($class_id){
     return $vehicles;
 }
 
+function get_vehicles_by_year($make_id){
+    global $db;
+    if($make_id){
+        $query ='SELECT V.vehicleID, V.model, V.price, V.year, M.makeName, C.className, T.typeName FROM vehicles V
+        LEFT JOIN make M ON V.makeID = M.makeID 
+        LEFT JOIN class C on V.classID = C.classID
+        LEFT JOIN type T on V.typeID = T.typeID
+        WHERE V.makeID = :make_id ORDER BY `year`';
+    } else{
+        $query ='SELECT V.vehicleID, V.model, V.price, V.year, M.makeName, C.className, T.typeName FROM vehicles V
+        LEFT JOIN make M ON V.makeID = M.makeID 
+        LEFT JOIN class C on V.classID = C.classID
+        LEFT JOIN type T on V.typeID = T.typeID
+        ORDER BY `year`';
+    }
+    $statement = $db->prepare($query);
+    if($make_id){
+        $statement->bindValue(':make_id', $make_id);
+    }
+    $statement->execute();
+    $vehicles = $statement->fetchAll();
+    $statement->closeCursor();
+    return $vehicles;
+}
+
+function get_vehicles_by_price($make_id){
+    global $db;
+    if($make_id){
+        $query ='SELECT V.vehicleID, V.model, V.price, V.year, M.makeName, C.className, T.typeName FROM vehicles V
+        LEFT JOIN make M ON V.makeID = M.makeID 
+        LEFT JOIN class C on V.classID = C.classID
+        LEFT JOIN type T on V.typeID = T.typeID
+        WHERE V.makeID = :make_id ORDER BY `year`';
+    } else{
+        $query ='SELECT V.vehicleID, V.model, V.price, V.year, M.makeName, C.className, T.typeName FROM vehicles V
+        LEFT JOIN make M ON V.makeID = M.makeID 
+        LEFT JOIN class C on V.classID = C.classID
+        LEFT JOIN type T on V.typeID = T.typeID
+        ORDER BY `price`';
+    }
+    $statement = $db->prepare($query);
+    if($make_id){
+        $statement->bindValue(':make_id', $make_id);
+    }
+    $statement->execute();
+    $vehicles = $statement->fetchAll();
+    $statement->closeCursor();
+    return $vehicles;
+}
+
 function add_vehicle($make_id, $class_id, $type_id, $year, $model, $price){
     global $db;
     $query = 'INSERT INTO `vehicles`(`year`, `model`, `price`, `makeID`, `classID`, `typeID`) VALUES (:year,:model,:price,:make_id,:class_id,:type_id)';

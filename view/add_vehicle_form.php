@@ -2,14 +2,14 @@
 
 <section>
         <h2>Add Vehicle</h2>
-        <label>Make:</label>
+        
         <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
-            <form action="." method="get" id="list_header_select" class="list_header_select">
-            <input type="hidden" name="action" value="make">
+            <input type="hidden" name="action" value="add_vehicle">
+            <label>Make:</label>
             <select name="make_id" required>
                 <?php foreach($makes as $make) : ?>
                     <?php if($make_id == $make['makeID']) { ?>
-                        <option value="<?=$make['makeID'] ?>" selected>
+                        <option value="<?=$make['makeID'] ?>">
                         <?php } else { ?>
                             <option value="<?=$make['makeID'] ?>">
                             <?php } ?>
@@ -17,11 +17,9 @@
                         </option>
                         <?php endforeach; ?>
             </select>
-            </form>
+            <br>
             
             <label>Type:</label>
-            <form action="." method="get" id="list_header_select" class="list_header_select">
-            <input type="hidden" name="action" value="type">
             <select name="type_id" required>
                 <?php foreach($types as $type) : ?>
                     <?php if($type_id == $type['typeID']) { ?>
@@ -33,11 +31,8 @@
                         </option>
                         <?php endforeach; ?>
             </select>
-            </form>
-            
+            <br>
             <label>Class:</label>
-            <form action="." method="get" id="list_header_select" class="list_header_select">
-            <input type="hidden" name="action" value="class">
             <select name="class_id" required>
                 <?php foreach($classes as $class) : ?>
                     <?php if($class_id == $class['classID']) { ?>
@@ -49,13 +44,9 @@
                         </option>
                         <?php endforeach; ?>
             </select>
-            </form>
-
-            <form action="." method="post">
+            <br>
             <label>Year:</label>
-            <input type="hidden" name="action" value="add_vehicle">
-            <input type="hidden" name="make_id" value="<?php echo $make_id; ?>">
-            <input type="text" id="year" name="year" required>
+            <input type="text" name="year" required>
             <br>
             <label>Model:</label>
             <input type="text" id="model" name="model" required>
@@ -64,7 +55,7 @@
             <input type="text" id="price" name="price" required>
             <br>
             <button type="submit" name="add_vehicle" value="add_vehicle">Add Vehicle</button>
-            </form>
+           
 </form>
 </section>
 

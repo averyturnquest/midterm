@@ -61,6 +61,22 @@ switch($action){
         include('view/vehicle_list.php');
         break;
 
+        case "year":
+            $vehicles = get_vehicles_by_year($make_id);
+            $makes = get_makes();
+            $classes = get_classes();
+            $types = get_types();
+            include('view/vehicle_list.php');
+            break;
+    
+        case "price":
+            $vehicles = get_vehicles_by_price($make_id);
+            $makes = get_makes();
+            $classes = get_classes();
+            $types = get_types();
+            include('view/vehicle_list.php');
+            break;
+
     default:
     $vehicles = get_vehicles_by_make($make_id);
     $makes = get_makes();

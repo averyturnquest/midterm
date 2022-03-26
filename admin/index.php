@@ -61,6 +61,22 @@ switch($action){
         include('../view/admin_vehicle_list.php');
         break;
 
+    case "year":
+        $vehicles = get_vehicles_by_year($make_id);
+        $makes = get_makes();
+        $classes = get_classes();
+        $types = get_types();
+        include('../view/admin_vehicle_list.php');
+        break;
+
+    case "price":
+        $vehicles = get_vehicles_by_price($make_id);
+        $makes = get_makes();
+        $classes = get_classes();
+        $types = get_types();
+        include('../view/admin_vehicle_list.php');
+        break;
+
     case "list_vehicles":
         $vehicles = get_vehicles_by_make($make_id);
         $makes = get_makes();
@@ -93,7 +109,7 @@ switch($action){
 
     case "add_vehicle":
         if($make_id && $class_id && $type_id && $year && $model && $price){
-            add_vehicle($make_id, $type_id, $class_id, $year, $model, $price);
+            add_vehicle($make_id, $class_id, $type_id, $year, $model, $price);
             header("Location .?make_id=$make_id");
         } else {
             $error = "Invalid vehicle data. Check all fields and try again.";

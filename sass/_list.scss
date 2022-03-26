@@ -38,7 +38,7 @@
     flex-direction: column;
     justify-content: space-between;
     @include mq(768px) {
-      flex-direction: row;
+      flex-direction: column;
     }
   }
   
@@ -81,6 +81,11 @@
     text-shadow: 2px 2px 5px $shadow-color;
   }
 
-  table, th, td{
+  table{
       border: 1px solid;
+  }
+  
+  th, td{
+      border: 1px solid;
+      padding-right: 20px;
   }
